@@ -9,13 +9,31 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
+use App\Filter\IsNewFilter;
 use Doctrine\ORM\Mapping as ORM;
 use InvalidArgumentException;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity]
-#[ApiResource(operations: [new Post(uriTemplate: JobApplication::ENDPOINT), new Get(uriTemplate: JobApplication::ENDPOINT_ID), new GetCollection(uriTemplate: JobApplication::ENDPOINT_COLLECTION_NEW, paginationPartial: false, order: ['id', 'firstName'],), new GetCollection(uriTemplate: JobApplication::ENDPOINT_COLLECTION_OLD, paginationPartial: false, order: ['id', 'firstName'],),],)]
+#[ApiResource(
+    operations: [
+        new Post(uriTemplate: JobApplication::ENDPOINT),
+        new Get(uriTemplate: JobApplication::ENDPOINT_ID),
+        new GetCollection(
+            uriTemplate: JobApplication::ENDPOINT_COLLECTION_NEW,
+            paginationPartial: false,
+            order: ['id', 'firstName'],
+            filters: [IsNewFilter::class],
+        ),
+        new GetCollection(
+            uriTemplate: JobApplication::ENDPOINT_COLLECTION_OLD,
+            paginationPartial: false,
+            order: ['id', 'firstName'],
+            filters: [IsNewFilter::class]
+        ),
+    ],
+)]
 #[ApiFilter(OrderFilter::class, properties: ['id' => 'ASC', 'firstName' => 'DESC'])]
 class JobApplication
 {
