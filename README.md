@@ -4,12 +4,18 @@
 - PHP >= 8.1
 - composer
 - Symfony CLI
+- API Platform
 
 ## Start projektu
 ```bash
 composer install
 symfony server:start -d
 ```
+
+## Link 
+- API Platform  - [Swagger](http://127.0.0.1:8000/api/docs)
+- http://127.0.0.1:8000/api
+
 
 
 ### Historia tworzenia projektu
