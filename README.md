@@ -6,9 +6,16 @@
 - Symfony CLI
 - API Platform
 
-## Start projektu
+## Uruchomienie
+- ustaw **DATABASE_URL** w pliku **.env** 
 ```bash
+# instalacja zależności i tworzenie bazy danych
 composer install
+php bin/console doctrine:schema:create
+```
+
+```bash
+# uruchomienie serwera
 symfony server:start -d
 ```
 

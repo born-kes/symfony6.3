@@ -54,3 +54,6 @@ PUT DELETE PATCH GET POST dla pojedyńczego zasobu.
 
 Zwracanie kolekcji daje możliwość użycia filtrowania, sortowania i paginacji.
 Jednak ograniczenie się do 4 specjalnych endpointów jest testem czy wiemy co robimy. 
+
+---
+<< Back to [ADR/2023.11.23 - job-application](/docs/adr/2023.11.23-job-application.md)
