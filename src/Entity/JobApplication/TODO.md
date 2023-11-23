@@ -1,19 +1,21 @@
 ### TODO
 
-- [ ] utworzenie entity aplikacji
-- [ ] wystawienie 4 endpointów (więcej jest milewidziane?)
-    - [ ] dodawanie aplikacji do pracy
-    - [ ] pobieranie aplikacji do pracy po id
-- [ ] wyświetlanie listy aplikacji do pracy
-    - [ ] wyświetlanie listy nowych aplikacji do pracy
-        - [ ] zmiana statusu nowych aplikacji po wyświetleniu listy
-    - [ ] wyświetlanie listy już pobranych aplikacji do pracy
+- [x] utworzenie entity aplikacji
+- [x] wystawienie 4 endpointów (więcej jest milewidziane?)
+    - [x] endpoint dodawania nowej aplikacji do pracy
+    - [x] pobieranie aplikacji do pracy po id
+- [x] wyświetlanie listy aplikacji do pracy
+    - [x] wyświetlanie listy nowych aplikacji do pracy
+        - [x] zmiana statusu nowych aplikacji po wyświetleniu listy
+    - [x] wyświetlanie listy już pobranych aplikacji do pracy
 - [ ] wybór pola sortowania
-- [ ] wybór kierunku sortowania
-- [ ] sortowanie i kierunek sortowania są opcjonalne (nieobowiązkowe)
-- [ ] filtrowanie
-- [ ] wyłączenie paginacji
+- [x] wybór kierunku sortowania
+- [x] sortowanie i kierunek sortowania są opcjonalne (nieobowiązkowe)
+- [x] wyłączenie paginacji
 - [ ] walidacja pól przed zapisem
+   - [x] walidacja standardowa po stronie backendu
+   - [] walidacja warunkowa (ifologia)
+- [] Poziom zależy od oczekiwanego wynagrodzenia
 
 
 - [ ] dodać testy
