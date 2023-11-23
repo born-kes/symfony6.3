@@ -75,17 +75,17 @@ class JobApplication
     #[Groups(['conference:list', 'conference:item'])]
     private ?string $position = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column]
     #[Groups(['conference:list', 'conference:item'])]
     private ?int $level = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column]
     #[Groups(['conference:list', 'conference:item'])]
     private ?int $expectedSalary = null;
 
     #[ORM\Column]
     #[Groups(['conference:list', 'conference:item'])]
-    private ?bool $isNew = null;
+    private ?int $isNew = null;
 
     public function getId(): int
     {
@@ -97,11 +97,20 @@ class JobApplication
         return $this->firstName;
     }
 
+    public function setFirstName(string $firstName): void
+    {
+        $this->firstName = $firstName;
+    }
+
     public function getLastName(): string
     {
         return $this->lastName;
     }
 
+    public function setLastName(string $lastName): void
+    {
+        $this->lastName = $lastName;
+    }
 
     public function getEmail(): string
     {

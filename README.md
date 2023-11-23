@@ -19,6 +19,19 @@ php bin/console doctrine:schema:create
 symfony server:start -d
 ```
 
+### Testy
+
+```bash
+# tworzy schemat entity w testowej bazy danych "app_test"
+# uwaga! sam dodaje sufix "_test" do nazwy bazy danych
+php bin/console doctrine:schema:create --env=test
+```
+
+```bash
+# uruchomienie testów
+php bin/phpunit
+```
+
 ## Link 
 - API Platform  - [Swagger](http://127.0.0.1:8000/api/docs)
 - http://127.0.0.1:8000/api

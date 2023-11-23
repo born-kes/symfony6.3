@@ -18,7 +18,7 @@
 - [] Poziom zależy od oczekiwanego wynagrodzenia
 
 
-- [ ] dodać testy
+- [x] dodać testy
 
 ## Wytyczne
 
