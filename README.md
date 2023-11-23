@@ -11,7 +11,11 @@ composer install
 symfony server:start -d
 ```
 
+
 ### Historia tworzenia projektu
-ADR - Architecture Decision Records
+
+[CHANGELOG.md](./CHANGELOG.md)
+
+[ADR](./docs/adr) - Architecture Decision Records
 
 [2023.11.23 - init](./docs/adr/2023.11.23_init.md)
