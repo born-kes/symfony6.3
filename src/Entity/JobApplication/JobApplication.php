@@ -61,14 +61,14 @@ class JobApplication
     #[ORM\Column(length: 255)]
     #[Groups(['conference:list', 'conference:item'])]
     #[Assert\NotBlank]
-    #[Assert\Email]
+    #[Assert\Email(message: 'The email {{ value }} is not a valid email.')]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 14)]
     #[Groups(['conference:list', 'conference:item'])]
     #[Assert\NotBlank]
-    #[Assert\Length(min: 9, max: 15, minMessage: "Phone number must be at least {{ limit }} characters long", maxMessage: "Phone number cannot be longer than {{ limit }} characters")]
-    #[Assert\Regex(pattern: "/^(\+\d{1,3})?\d{9,15}$/", message: "Invalid phone number format")]
+    #[Assert\Length(min: 9, max: 14, minMessage: "Phone number must be at least {{ limit }} characters long", maxMessage: "Phone number cannot be longer than {{ limit }} characters")]
+    #[Assert\Regex(pattern: "/^(\+\d{1,3})?\d{9}$/", message: "Invalid phone number format")]
     private ?string $phone = null;
 
     #[ORM\Column(length: 255)]
@@ -133,11 +133,6 @@ class JobApplication
 
     public function setPhone(string $phone): void
     {
-        // Dodatkowa weryfikacja przy użyciu wyrażenia regularnego
-        if (!preg_match("/^(\+\d{1,3})?\d{9,15}$/", $phone)) {
-            throw new InvalidArgumentException("Invalid phone number format");
-        }
-
         $this->phone = $phone;
     }
 
