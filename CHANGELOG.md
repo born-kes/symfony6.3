@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Utworzenie projektu - [ADR/2023.11.23 - init](./docs/adr/2023.11.23_init.md)
+- Utworzenie brancha api-platform i instalacja biblioteki api-platform.
 
 ### Fixed
 
