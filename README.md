@@ -6,10 +6,30 @@
 - Symfony CLI
 - API Platform
 
-## Start projektu
+## Uruchomienie
+- ustaw **DATABASE_URL** w pliku **.env** 
 ```bash
+# instalacja zależności i tworzenie bazy danych
 composer install
+php bin/console doctrine:schema:create
+```
+
+```bash
+# uruchomienie serwera
 symfony server:start -d
+```
+
+### Testy
+
+```bash
+# tworzy schemat entity w testowej bazy danych "app_test"
+# uwaga! sam dodaje sufix "_test" do nazwy bazy danych
+php bin/console doctrine:schema:create --env=test
+```
+
+```bash
+# uruchomienie testów
+php bin/phpunit
 ```
 
 ## Link 

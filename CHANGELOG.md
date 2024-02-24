@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Utworzenie encji JobApplication - [ADR/2023.11.23 - job-application](./docs/adr/2023.11.23-job-application.md)
 
 ### Fixed
 
