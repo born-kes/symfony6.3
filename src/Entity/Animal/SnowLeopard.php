@@ -24,6 +24,6 @@ class SnowLeopard extends Animal implements IFur
 
     public function presentsItself(): string
     {
-        return sprintf($this->hasFur() ? self::FUR_CLEAN : self::FUR_DIRTY, $this);
+        return sprintf($this->isFurClean() ? self::FUR_CLEAN : self::FUR_DIRTY, $this);
     }
 }
