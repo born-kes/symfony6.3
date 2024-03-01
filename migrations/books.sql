@@ -1,3 +1,4 @@
+-- PostgreSQL 14 database dump
 -- Table authors
 CREATE TABLE public.authors
 (
@@ -50,8 +51,8 @@ CREATE TABLE public.reviews
     description TEXT    NOT NULL
 );
 
-ALTER TABLE public.reviews
-    ADD CONSTRAINT fk_reviews_book_id FOREIGN KEY (book_id) REFERENCES public.books (book_id) ON DELETE CASCADE;
+-- ALTER TABLE public.reviews
+--     ADD CONSTRAINT fk_reviews_book_id FOREIGN KEY (book_id) REFERENCES public.books (book_id) ON DELETE CASCADE;
 
 ALTER TABLE public.reviews
     ADD CONSTRAINT fk_reviews_author_id FOREIGN KEY (author_id) REFERENCES public.authors (author_id) ON DELETE CASCADE;
@@ -72,7 +73,7 @@ ON COLUMN "reviews"."description" IS 'Opis recenzji';
 
 -- view count books
 CREATE
-OR REPLACE VIEW public.authors_books_count AS
+OR REPLACE VIEW public.v_authors_books_count AS
 SELECT a.first_name,
        a.last_name,
        COUNT(b.book_id) AS books_count
@@ -80,9 +81,9 @@ FROM authors a
          JOIN books b USING (author_id)
 GROUP BY author_id, a.first_name, a.last_name;
 
--- widok avg_rating
+-- widok v_avg_rating
 CREATE
-OR REPLACE VIEW public.avg_rating AS
+OR REPLACE VIEW public.v_avg_rating AS
 SELECT a.first_name,
        a.last_name,
        AVG(r.rating)::float AS avg_rating
