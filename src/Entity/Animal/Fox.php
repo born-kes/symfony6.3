@@ -14,7 +14,7 @@ class Fox extends Animal implements IFur
 
     protected function getElementDiet(): array
     {
-        return [FoodType::MEAT];
+        return [FoodType::MEAT, FoodType::VEGETABLES];
     }
 
     public function groom(): void
