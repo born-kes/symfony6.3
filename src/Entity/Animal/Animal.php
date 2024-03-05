@@ -9,6 +9,9 @@ use App\Entity\Food\FoodType;
 use App\Entity\Food\IFood;
 use Exception;
 
+/**
+ * magic method hasFur in interface IFur is never used
+ */
 abstract class Animal implements IAnimal
 {
     protected string $species;
@@ -56,8 +59,38 @@ abstract class Animal implements IAnimal
         return $this->diet->hasFood(FoodType::VEGETABLES);
     }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getSpecies(): string
+    {
+        return $this->species;
+    }
+
+    public function getDiet(): FoodCollection
+    {
+        return $this->diet;
+    }
+
     public function __toString(): string
     {
         return "{$this->species} {$this->name}";
+    }
+
+    /**
+     * @param string $name
+     * @param array $arguments
+     * @return bool
+     * @throws Exception
+     */
+    public function __call($name, $arguments)
+    {
+        if(strpos($name, 'has') === 0) {
+            return false;
+        }
+
+        throw new Exception("Method {$name} does not exist");
     }
 }
