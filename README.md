@@ -6,10 +6,20 @@
 - Symfony CLI
 - API Platform
 
+- encore
+- react.js
+- webpack
+
 ## Start projektu
 ```bash
 composer install
+npm install
 symfony server:start -d
+```
+
+## Start webpack
+```bash
+npm run watch 
 ```
 
 ## Link 

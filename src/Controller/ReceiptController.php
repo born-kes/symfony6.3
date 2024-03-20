@@ -12,8 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ReceiptController extends AbstractController
 {
-    #[Route('/receipt', name: 'app_receipt')]
-    public function index(Request $request, ManagerRegistry $doctrine): Response
+    #[Route('/receipt', name: 'add_receipt')]
+    public function addReceipt(Request $request, ManagerRegistry $doctrine): Response
     {
         $receipt = new Receipt();
         $form = $this->createForm(ReceiptType::class, $receipt);
@@ -31,9 +31,15 @@ class ReceiptController extends AbstractController
         }
 
 
-        return $this->render('receipt/add.html.twig', [
+        return $this->render('receipt/addReceipt.html.twig', [
             'form' => $form->createView(),
             'getProduct' => $productName,
         ]);
+    }
+
+    #[Route('/', name: 'app_react')]
+    public function react(): Response
+    {
+        return $this->render('receipt/react.html.twig');
     }
 }
