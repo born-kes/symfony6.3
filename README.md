@@ -6,10 +6,20 @@
 - Symfony CLI
 - API Platform
 
+- encore
+- react.js
+- webpack
+
 ## Start projektu
 ```bash
 composer install
+npm install
 symfony server:start -d
+```
+
+## Start webpack
+```bash
+npm run watch 
 ```
 
 ## Link 
@@ -25,3 +35,5 @@ symfony server:start -d
 [ADR](./docs/adr) - Architecture Decision Records
 
 [2023.11.23 - init](./docs/adr/2023.11.23_init.md)
+[2023.11.23 - api-platform](./docs/adr/2023.11.23-api-platform.md)
+[2024.03.20 - add React.js](./docs/adr/2024.03.20-add-react.md)
