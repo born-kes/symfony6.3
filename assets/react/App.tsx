@@ -1,6 +1,12 @@
 import * as React from 'react';
-import {Hello} from './components/Hello';
+import {Provider} from 'react-redux'
+import store from './store';
+import {Counter} from './reducers/features/Counter/Counter';
 
-const App: React.FC = () => <Hello/>;
+const App: React.FC = () => (
+    <Provider store={store}>
+        <Counter/>
+    </Provider>
+);
 
 export {App};

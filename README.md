@@ -13,12 +13,12 @@
 ## Start projektu
 ```bash
 composer install
-npm install
 symfony server:start -d
 ```
 
 ## Start webpack
 ```bash
+npm install
 npm run watch 
 ```
 
