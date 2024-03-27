@@ -1,6 +1,8 @@
 import * as React from 'react';
-import {Hello} from './components/Hello';
+import {Receipt} from "./components/receipt/Receipt";
 
-const App: React.FC = () => <Hello/>;
+const App: React.FC = () => (
+    <Receipt/>
+);
 
 export {App};
