@@ -1,0 +1,49 @@
+@startuml
+'schemat data base
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define View(name,desc) class name as "desc" << (V,#AAAAAA) >>
+
+Table(authors, "authors") {
+    primary_key(author_id) : SERIAL
+    first_name : VARCHAR
+    last_name : VARCHAR
+}
+
+Table(books, "books") {
+    primary_key(book_id) : SERIAL
+    author_id : INTEGER
+    title : VARCHAR
+    genre : VARCHAR
+    publication_year : INTEGER
+    isbn : VARCHAR
+}
+
+Table(reviews, "reviews") {
+    primary_key(review_id) : SERIAL
+    book_id : INTEGER
+    author_id : INTEGER
+    rating : INTEGER
+    description : TEXT
+}
+
+View(v_authors_books_count, "v_authors_books_count") {
+    author_id : INTEGER
+    first_name : VARCHAR
+    last_name : VARCHAR
+    books_count : INTEGER
+}
+
+View(v_avg_rating, "v_avg_rating") {
+    first_name : VARCHAR
+    last_name : VARCHAR
+    avg_rating : FLOAT
+}
+
+books -down- authors: author_id
+books -down- reviews: book_id
+
+v_authors_books_count -right- authors: author_id
+v_authors_books_count -right- books: author_id
+v_avg_rating -right- authors: author_id
+
+@enduml
