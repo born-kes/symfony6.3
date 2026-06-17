@@ -18,7 +18,7 @@ class ReceiptType extends AbstractType
     {
         $builder
             ->add('shop', EntityType::class, [
-                'class' => 'App\Entity\Shop',
+                'class' => \App\Entity\Shop::class,
                 'choice_label' => 'name',
                 'label' => 'Sklep '
             ])
