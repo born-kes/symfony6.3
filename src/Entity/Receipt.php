@@ -14,7 +14,7 @@ class Receipt
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(options: ['comment' => 'receipt_id'])]
     private ?int $id = null;
 
     #[ORM\Column]

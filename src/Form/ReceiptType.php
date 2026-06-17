@@ -2,8 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Product;
 use App\Entity\Receipt;
-
+use App\Entity\Shop;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -18,13 +19,13 @@ class ReceiptType extends AbstractType
     {
         $builder
             ->add('shop', EntityType::class, [
-                'class' => \App\Entity\Shop::class,
+                'class' => Shop::class,
                 'choice_label' => 'name',
                 'label' => 'Sklep '
             ])
             ->add('create_at', DateTimeType::class, ['label' => 'Data paragonu '])
             ->add('product', EntityType::class, [
-                'class' => \App\Entity\Product::class,
+                'class' => Product::class,
                 'choice_label' => 'name',
                 'label' => 'Produkt '
             ])
