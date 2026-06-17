@@ -18,7 +18,7 @@ class Receipt
     private ?int $id = null;
 
     #[ORM\Column]
-    private DateTime $create_at;
+    private ?DateTime $create_at = null;
 
     #[ORM\ManyToOne(targetEntity: Product::class)]
     #[ORM\JoinColumn(nullable: false)]
