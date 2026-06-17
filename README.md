@@ -1,7 +1,8 @@
 # Sandbox Symfony
 
 ## Użyte technologie:
-- PHP >= 8.1
+
+- PHP >= 8.2
 - composer
 - Symfony CLI
 - API Platform
@@ -11,15 +12,21 @@
 - webpack
 
 ## Start projektu
+
 ```bash
 composer install
+```
+
+```bash
 symfony server:start -d
 ```
 
 ## Start webpack
+
 ```bash
 npm install
-npm run watch 
+npm run dev
+#npm run watch 
 ```
 
 ## Link 
