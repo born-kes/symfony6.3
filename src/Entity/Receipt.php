@@ -20,10 +20,9 @@ class Receipt
     #[ORM\Column]
     private DateTime $create_at;
 
-    #[ORM\Column]
     #[ORM\ManyToOne(targetEntity: Product::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Product $product;
+    private ?Product $product = null;
 
     #[ORM\Column]
     private ?float $price = null;
