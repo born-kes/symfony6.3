@@ -30,10 +30,9 @@ class Receipt
     #[ORM\Column]
     private ?int $quantity = null;
 
-    #[ORM\Column]
     #[ORM\ManyToOne(targetEntity: Shop::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Shop $shop;
+    private ?Shop $shop = null;
 
     public function getId(): ?int
     {
