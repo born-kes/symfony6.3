@@ -24,7 +24,7 @@ class ReceiptType extends AbstractType
             ])
             ->add('create_at', DateTimeType::class, ['label' => 'Data paragonu '])
             ->add('product', EntityType::class, [
-                'class' => 'App\Entity\Product',
+                'class' => \App\Entity\Product::class,
                 'choice_label' => 'name',
                 'label' => 'Produkt '
             ])
