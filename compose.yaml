@@ -1,6 +1,24 @@
 version: '3'
 
 services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: >-
+      sh -c "if [ ! -d vendor ]; then composer install --no-interaction --prefer-dist; fi
+      && php -S 0.0.0.0:8000 -t public"
+    environment:
+      APP_ENV: dev
+      DATABASE_URL: postgresql://${POSTGRES_USER:-app}:${POSTGRES_PASSWORD:-!ChangeMe!}@database:5432/${POSTGRES_DB:-app}?serverVersion=15&charset=utf8
+    depends_on:
+      - database
+    ports:
+      - "8000:8000"
+
 ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-15}-alpine

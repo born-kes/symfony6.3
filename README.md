@@ -12,6 +12,14 @@ composer install
 symfony server:start -d
 ```
 
+## Start projektu w Dockerze
+```bash
+docker compose up --build -d
+```
+
+Symfony będzie dostępne pod adresem:
+- http://127.0.0.1:8000
+
 ## Link 
 - API Platform  - [Swagger](http://127.0.0.1:8000/api/docs)
 - http://127.0.0.1:8000/api
