@@ -1,0 +1,28 @@
+@startmindmap
+'https://plantuml.com/mindmap-diagram
+
+caption schemat mindmap
+title Animals class diagram
+
+header
+schemat class do zaania od Unity-T Group
+endheader
+
+* <&pulse>Zoo
+** <&globe> Animals
+*** Elephant
+*** Fox
+**** + Fur
+*** Rabbit
+**** + Fur
+*** Rhino
+*** SnowLeopard
+**** + Fur
+*** Tiger
+**** + Fur
+* FoodCollection
+** Food
+*** Meat
+*** Vegetable
+
+@endmindmap
